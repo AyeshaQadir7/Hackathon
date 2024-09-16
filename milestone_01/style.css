@@ -196,7 +196,7 @@ ul li::before {
 @media (max-width: 600px) and (min-width: 300px) {
     .bg {
         width: 80%;
-        height: 53%;
+        height: 56%;
         align-items: center;
     }
 
