@@ -9,7 +9,10 @@
     {
       "src": "/milestone_04/(.*)",
       "dest": "/Hackathon_minus_one/milestone_04/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Hackathon_minus_one/milestone_04/index.html"
     }
   ]
 }
-
