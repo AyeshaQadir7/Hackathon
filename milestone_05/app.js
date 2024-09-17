@@ -1,133 +1,160 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var addExperienceButton = document.getElementById("add-experience");
-    var addEducationButton = document.getElementById("add-education");
-    var addSkillButton = document.getElementById("add-skill");
-    var generateResumeButton = document.getElementById("generate-resume");
-    addExperienceButton.addEventListener("click", function () {
-        var experienceList = document.getElementById("experience-list");
-        var experienceItem = document.createElement("div");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+document.addEventListener("DOMContentLoaded", () => {
+    const addExperienceButton = document.getElementById("add-experience");
+    const addEducationButton = document.getElementById("add-education");
+    const addSkillButton = document.getElementById("add-skill");
+    const generateResumeButton = document.getElementById("generate-resume");
+    addExperienceButton.addEventListener("click", () => {
+        const experienceList = document.getElementById("experience-list");
+        const experienceItem = document.createElement("div");
         experienceItem.className = "experience-item";
-        experienceItem.innerHTML = "\n            <input type=\"text\" placeholder=\"Job Title\" class=\"job-title\" required>\n            <input type=\"text\" placeholder=\"Company/Organization Name\" class=\"company-name\" required>\n            <button type=\"button\" class=\"remove-btn\"><i class=\"fa-solid fa-minus\"></i></button>\n        ";
+        experienceItem.innerHTML = `
+            <input type="text" placeholder="Job Title" class="job-title" required>
+            <input type="text" placeholder="Company/Organization Name" class="company-name" required>
+            <button type="button" class="remove-btn"><i class="fa-solid fa-minus"></i></button>
+        `;
         experienceList.appendChild(experienceItem);
         attachRemoveButtonEvent(experienceItem);
     });
-    addEducationButton.addEventListener("click", function () {
-        var educationList = document.getElementById("education-list");
-        var educationItem = document.createElement("div");
+    addEducationButton.addEventListener("click", () => {
+        const educationList = document.getElementById("education-list");
+        const educationItem = document.createElement("div");
         educationItem.className = "education-item";
-        educationItem.innerHTML = "\n            <input type=\"text\" placeholder=\"School/College Name\" class=\"school-name\" required>\n            <input type=\"text\" placeholder=\"Degree\" class=\"degree\" required>\n            <button type=\"button\" class=\"remove-btn\"><i class=\"fa-solid fa-minus\"></i></button>\n        ";
+        educationItem.innerHTML = `
+            <input type="text" placeholder="School/College Name" class="school-name" required>
+            <input type="text" placeholder="Degree" class="degree" required>
+            <button type="button" class="remove-btn"><i class="fa-solid fa-minus"></i></button>
+        `;
         educationList.appendChild(educationItem);
         attachRemoveButtonEvent(educationItem);
     });
-    addSkillButton.addEventListener("click", function () {
-        var skillsList = document.getElementById("skills-list");
-        var skillItem = document.createElement("div");
+    addSkillButton.addEventListener("click", () => {
+        const skillsList = document.getElementById("skills-list");
+        const skillItem = document.createElement("div");
         skillItem.className = "skill-item";
-        skillItem.innerHTML = "\n            <input type=\"text\" placeholder=\"Skill\" class=\"skill\" required>\n            <button type=\"button\" class=\"remove-btn\"><i class=\"fa-solid fa-minus\"></i></button>\n        ";
+        skillItem.innerHTML = `
+            <input type="text" placeholder="Skill" class="skill" required>
+            <button type="button" class="remove-btn"><i class="fa-solid fa-minus"></i></button>
+        `;
         skillsList.appendChild(skillItem);
         attachRemoveButtonEvent(skillItem);
     });
     function attachRemoveButtonEvent(item) {
-        var removeButton = item.querySelector(".remove-btn");
-        removeButton.addEventListener("click", function () {
+        const removeButton = item.querySelector(".remove-btn");
+        removeButton.addEventListener("click", () => {
             item.remove();
         });
     }
-    generateResumeButton.addEventListener("click", function () {
-        var _a;
-        var name = document.getElementById("name").value;
-        var designation = document.getElementById("designation").value;
-        var phone = document.getElementById("phone").value;
-        var email = document.getElementById("email").value;
-        var social = document.getElementById("social").value;
-        var profilePic = (_a = document.getElementById("profile-pic").files) === null || _a === void 0 ? void 0 : _a[0];
-        var resumeOutput = "<div class=\"resume-header\">";
+    generateResumeButton.addEventListener("click", () => {
+        const name = document.getElementById("name").value;
+        const designation = document.getElementById("designation").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const social = document.getElementById("social").value;
+        const profilePic = document.getElementById("profile-pic").files?.[0];
+        let resumeOutput = `<div class="resume-header">`;
         if (profilePic) {
-            resumeOutput += "<img src=\"".concat(URL.createObjectURL(profilePic), "\" alt=\"Profile Picture\">");
+            resumeOutput += `<img src="${URL.createObjectURL(profilePic)}" alt="Profile Picture">`;
         }
-        resumeOutput += "<div class=\"textAlign\" ><h5>".concat(name, "</h5><h6>").concat(designation, "</h6><p class=\"phone\">Phone: ").concat(phone, "</p><p class=\"email\">Email: ").concat(email, "</p><p>Social: ").concat(social, "</p></div></div>");
+        resumeOutput += `<div class="textAlign" ><h5>${name}</h5><h6>${designation}</h6><p class="phone">Phone: ${phone}</p><p class="email">Email: ${email}</p><p>Social: ${social}</p></div></div>`;
         // Experience Section
-        resumeOutput += "<div class=\"resume-section\"><h3>Experience</h3>";
-        var experienceItems = document.querySelectorAll(".experience-item");
-        experienceItems.forEach(function (item) {
-            var jobTitle = item.querySelector(".job-title").value;
-            var companyName = item.querySelector(".company-name").value;
-            resumeOutput += "<div class=\"resume-item\"><p>".concat(jobTitle, "</p>at<p>").concat(companyName, "</p></div>");
+        resumeOutput += `<div class="resume-section"><h3>Experience</h3>`;
+        const experienceItems = document.querySelectorAll(".experience-item");
+        experienceItems.forEach(item => {
+            const jobTitle = item.querySelector(".job-title").value;
+            const companyName = item.querySelector(".company-name").value;
+            resumeOutput += `<div class="resume-item"><p>${jobTitle}</p>at<p>${companyName}</p></div>`;
         });
-        resumeOutput += "</div>";
+        resumeOutput += `</div>`;
         // Education Section
-        resumeOutput += "<div class=\"resume-section\"><h3>Education</h3>";
-        var educationItems = document.querySelectorAll(".education-item");
-        educationItems.forEach(function (item) {
-            var schoolName = item.querySelector(".school-name").value;
-            var degree = item.querySelector(".degree").value;
-            resumeOutput += "<div class=\"resume-item\"><p>".concat(degree, "</p>from<p>").concat(schoolName, "</p></div>");
+        resumeOutput += `<div class="resume-section"><h3>Education</h3>`;
+        const educationItems = document.querySelectorAll(".education-item");
+        educationItems.forEach(item => {
+            const schoolName = item.querySelector(".school-name").value;
+            const degree = item.querySelector(".degree").value;
+            resumeOutput += `<div class="resume-item"><p>${degree}</p>from<p>${schoolName}</p></div>`;
         });
-        resumeOutput += "</div>";
+        resumeOutput += `</div>`;
         // Skills Section
-        resumeOutput += "<div class=\"resume-section\"><h3>Skills</h3><div id=\"skills-list\">";
-        var skillItems = document.querySelectorAll(".skill-item");
-        skillItems.forEach(function (item) {
-            var skill = item.querySelector(".skill").value;
-            resumeOutput += "<p>".concat(skill, "</p>");
+        resumeOutput += `<div class="resume-section"><h3>Skills</h3><div id="skills-list">`;
+        const skillItems = document.querySelectorAll(".skill-item");
+        skillItems.forEach(item => {
+            const skill = item.querySelector(".skill").value;
+            resumeOutput += `<p>${skill}</p>`;
         });
-        resumeOutput += "</div></div>";
-        var resumeOutputDiv = document.getElementById("resume-output");
+        resumeOutput += `</div></div>`;
+        const resumeOutputDiv = document.getElementById("resume-output");
         resumeOutputDiv.innerHTML = resumeOutput;
         resumeOutputDiv.style.display = "block";
     });
-    generateResumeButton.addEventListener("click", function () {
-        var _a;
-        var name = document.getElementById("name").value;
-        var designation = document.getElementById("designation").value;
-        var phone = document.getElementById("phone").value;
-        var email = document.getElementById("email").value;
-        var social = document.getElementById("social").value;
-        var profilePic = (_a = document.getElementById("profile-pic").files) === null || _a === void 0 ? void 0 : _a[0];
-        var resumeOutput = "<div class=\"resume-header\">";
+    generateResumeButton.addEventListener("click", () => {
+        const name = document.getElementById("name").value;
+        const designation = document.getElementById("designation").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const social = document.getElementById("social").value;
+        const profilePic = document.getElementById("profile-pic").files?.[0];
+        let resumeOutput = `<div class="resume-header">`;
         // Profile Picture
         if (profilePic) {
-            resumeOutput += "<img src=\"".concat(URL.createObjectURL(profilePic), "\" alt=\"Profile Picture\" contenteditable=\"false\">");
+            resumeOutput += `<img src="${URL.createObjectURL(profilePic)}" alt="Profile Picture" contenteditable="false">`;
         }
         // Personal Info with contenteditable
-        resumeOutput += "\n            <div class=\"textAlign\">\n                <h5 contenteditable=\"true\">".concat(name, "</h5>\n                <h6 contenteditable=\"true\">").concat(designation, "</h6>\n                <p class=\"phone\" contenteditable=\"true\">Phone: ").concat(phone, "</p>\n                <p class=\"email\" contenteditable=\"true\">Email: ").concat(email, "</p>\n                <p contenteditable=\"true\">Social: ").concat(social, "</p>\n            </div>\n        </div>");
+        resumeOutput += `
+            <div class="textAlign">
+                <h5 contenteditable="true">${name}</h5>
+                <h6 contenteditable="true">${designation}</h6>
+                <p class="phone" contenteditable="true">Phone: ${phone}</p>
+                <p class="email" contenteditable="true">Email: ${email}</p>
+                <p contenteditable="true">Social: ${social}</p>
+            </div>
+        </div>`;
         // Experience Section with contenteditable
-        resumeOutput += "<div class=\"resume-section\"><h3>Experience</h3>";
-        var experienceItems = document.querySelectorAll(".experience-item");
-        experienceItems.forEach(function (item) {
-            var jobTitle = item.querySelector(".job-title").value;
-            var companyName = item.querySelector(".company-name").value;
-            resumeOutput += "\n                <div class=\"resume-item\">\n                    <p contenteditable=\"true\">".concat(jobTitle, "</p>\n                    <p contenteditable=\"true\">at ").concat(companyName, "</p>\n                </div>");
+        resumeOutput += `<div class="resume-section"><h3>Experience</h3>`;
+        const experienceItems = document.querySelectorAll(".experience-item");
+        experienceItems.forEach(item => {
+            const jobTitle = item.querySelector(".job-title").value;
+            const companyName = item.querySelector(".company-name").value;
+            resumeOutput += `
+                <div class="resume-item">
+                    <p contenteditable="true">${jobTitle}</p>
+                    <p contenteditable="true">at ${companyName}</p>
+                </div>`;
         });
-        resumeOutput += "</div>";
+        resumeOutput += `</div>`;
         // Education Section with contenteditable
-        resumeOutput += "<div class=\"resume-section\"><h3>Education</h3>";
-        var educationItems = document.querySelectorAll(".education-item");
-        educationItems.forEach(function (item) {
-            var schoolName = item.querySelector(".school-name").value;
-            var degree = item.querySelector(".degree").value;
-            resumeOutput += "\n                <div class=\"resume-item\">\n                    <p contenteditable=\"true\">".concat(degree, "</p>\n                    <p contenteditable=\"true\">from ").concat(schoolName, "</p>\n                </div>");
+        resumeOutput += `<div class="resume-section"><h3>Education</h3>`;
+        const educationItems = document.querySelectorAll(".education-item");
+        educationItems.forEach(item => {
+            const schoolName = item.querySelector(".school-name").value;
+            const degree = item.querySelector(".degree").value;
+            resumeOutput += `
+                <div class="resume-item">
+                    <p contenteditable="true">${degree}</p>
+                    <p contenteditable="true">from ${schoolName}</p>
+                </div>`;
         });
-        resumeOutput += "</div>";
+        resumeOutput += `</div>`;
         // Skills Section with contenteditable
-        resumeOutput += "<div class=\"resume-section\"><h3>Skills</h3><div id=\"skills-list\">";
-        var skillItems = document.querySelectorAll(".skill-item");
-        skillItems.forEach(function (item) {
-            var skill = item.querySelector(".skill").value;
-            resumeOutput += "<p contenteditable=\"true\">".concat(skill, "</p>");
+        resumeOutput += `<div class="resume-section"><h3>Skills</h3><div id="skills-list">`;
+        const skillItems = document.querySelectorAll(".skill-item");
+        skillItems.forEach(item => {
+            const skill = item.querySelector(".skill").value;
+            resumeOutput += `<p contenteditable="true">${skill}</p>`;
         });
-        resumeOutput += "</div></div>";
+        resumeOutput += `</div></div>`;
         // Display the generated resume
-        var resumeOutputDiv = document.getElementById("resume-output");
+        const resumeOutputDiv = document.getElementById("resume-output");
         resumeOutputDiv.innerHTML = resumeOutput;
         resumeOutputDiv.style.display = "block";
     });
 });
 // Link Generating and PDF Downolading
 function createResume() {
-    var username = document.getElementById("username").value;
+    const username = document.getElementById("username").value;
     if (username) {
-        var uniqueUrl = generateUniqueUrl(username);
+        const uniqueUrl = generateUniqueUrl(username);
         console.log("Resume URL generated: ", uniqueUrl);
     }
     else {
@@ -135,15 +162,15 @@ function createResume() {
     }
 }
 function generateUniqueUrl(username) {
-    var baseUrl = "https://yourapp.vercel.app/resume";
-    var uniqueUrl = "".concat(baseUrl, "?user=").concat(username);
+    const baseUrl = "https://yourapp.vercel.app/resume";
+    const uniqueUrl = `${baseUrl}?user=${username}`;
     document.getElementById("share-link").innerHTML = uniqueUrl;
     return uniqueUrl;
 }
 function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function () {
+    navigator.clipboard.writeText(text).then(() => {
         alert("Link copied to clipboard!");
-    }).catch(function (err) {
+    }).catch(err => {
         console.error("Failed to copy: ", err);
     });
 }
