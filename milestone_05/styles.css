@@ -287,7 +287,7 @@ footer p {
 /* Media Queries for Responsive Design */
 
 /* Mobile devices */
-@media (max-width: 430px) and (min-width: 300px) {
+@media (max-width: 430px) and (min-width: 200px) {
     .container {
         max-width: 90%;
         margin: auto;
@@ -307,7 +307,7 @@ footer p {
     }
 
     button {
-        font-size: 1vh;
+        font-size: 1.4vh;
     }
 
     input[type="text"],
@@ -317,8 +317,9 @@ footer p {
         padding: 10px;
     }
 
-    .genrate-btn {
+    .genrate-btn button {
         margin: 2vh 0;
+        font-size: 1.8vh;
     }
 
     #resume-output img {
@@ -376,7 +377,8 @@ footer p {
     }
 
     button {
-        font-size: 1vh;
+        font-size: 1.5vh;
+        margin-bottom: 1vh;
     }
 
     input[type="text"],
@@ -441,7 +443,7 @@ footer p {
 
     label,
     button {
-        font-size: 1.5vh;
+        font-size: 1.6vh;
     }
 
     input[type="text"],
