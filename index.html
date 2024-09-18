@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloadable & Shareable Resume - Ayesha Qadir</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to css -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <form id="resume-form">
+            <!-- About Section -->
+            <div class="section">
+
+                <h2>About</h2>
+                <div class="box">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="Name" required>
+                    <br>
+                    <label for="designation">Designation:</label>
+                    <input type="text" id="designation" placeholder="Designation" required>
+                    <br>
+                    <label for="profilePicture">Upload Profile Picture:</label>
+                    <input type="file" id="profile-pic" accept="image/*">
+                    <br>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" placeholder="Phone Number" required>
+                    <br>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                    <br>
+                    <label for="social">Social Media (e.g. LinkedIn):</label>
+                    <input type="text" id="social" placeholder="Social Media Account">
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div id="experience-section" class="section">
+                <h2>Experience</h2>
+
+                <div class="box">
+                    <div id="experience-list">
+                        <div class="experience-item">
+                            <label for="jobTitle">Job Title:</label>
+                            <input type="text" placeholder="Job Title" class="job-title" required>
+                            <br>
+                            <label for="company">Company/Organization:</label>
+                            <input type="text" placeholder="Company/Organization Name" class="company-name" required>
+
+
+                        </div>
+                    </div>
+                    <button type="button" id="add-experience"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div id="education-section" class="section">
+                <h2>Education</h2>
+                <div class="box">
+                    <div id="education-list">
+                        <div class="education-item">
+                            <label for="school">School/College Name:</label>
+                            <input type="text" placeholder="School/College Name" class="school-name" required>
+                            <br>
+                            <label for="degree">Degree:</label>
+                            <input type="text" placeholder="Degree" class="degree" required>
+
+                        </div>
+                    </div>
+                    <button type="button" id="add-education"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div id="skills-section" class="section">
+                <h2>Skills</h2>
+                <div class="box">
+                    <div id="skills-list">
+                        <div class="skill-item">
+                            <input type="text" placeholder="Skill" class="skill" required>
+
+                        </div>
+                    </div>
+                    <button type="button" id="add-skill"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="genrate-btn">
+                <button type="button" id="generate-resume">Generate Resume</button>
+            </div>
+        </form>
+        <div id="resume-output" class="section"></div>
+
+        <div class="Link-down box">
+            <input type="text" id="username" placeholder="Enter your username">
+            <button onclick="createResume()">Generate Link</button>
+            <p>Your unique URL: <span id="share-link"></span></p>
+            <button onclick="copyToClipboard(document.getElementById('share-link').textContent)">Share Resume
+                Link</button>
+            <button onclick="downloadAsPDF()">Download Resume as PDF</button>
+        </div>
+
+    </div>
+
+
+
+    <footer>
+        <p>&copy; 2024 Ayesha Qadir. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

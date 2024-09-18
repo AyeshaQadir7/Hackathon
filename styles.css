@@ -1,0 +1,561 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, Arial;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 50%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 4vh;
+    font-weight: 400;
+    color: #fff;
+    background-color: #07143f;
+    border-radius: 1vh;
+}
+
+h2 {
+    background-color: #07143f;
+    color: #fff;
+    padding: .5vh 3vh;
+    font-size: 3vh;
+    font-weight: 400;
+}
+
+.box {
+    border: 1px solid hsl(0, 0%, 80%);
+    padding: 2.5vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+    font-size: 2vh;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+button {
+    padding: 8px 10px;
+    background-color: #fab440;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    font-size: 2vh;
+}
+
+button:hover {
+    background-color: #ec9b1a;
+}
+
+.genrate-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh 0vh;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Generated Resume Styling */
+
+#resume {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#downloadBtn {
+    margin-top: 20px;
+}
+
+#resume-output {
+    margin-top: 6vh;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); */
+    display: none;
+}
+
+#resume-output img {
+    /* max-width: 140px; */
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#resume-output h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #222;
+}
+
+#resume-output h3 {
+    font-size: 3.4vh;
+    color: #07143f;
+    border-bottom: 2px solid #fab340a9;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#resume-output p {
+    font-size: 2.3vh;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Resume Header */
+.resume-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 5px solid #fab340a9;
+    padding-top: 1vh;
+    margin-top: 1vh;
+}
+
+.resume-header img {
+    width: 23vh;
+    height: 23vh;
+    border-radius: 50%;
+}
+
+.textAlign {
+    margin-left: 8vh;
+}
+
+.resume-header div {
+    flex-grow: 1;
+}
+
+.resume-header h5 {
+    margin-bottom: 1vh;
+    font-size: 5vh;
+    color: #07143f;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fab340a9;
+    padding-bottom: 1vh;
+    margin-bottom: 1vh;
+}
+
+.resume-header h6 {
+    margin-top: 2vh;
+    font-size: 3vh;
+    color: #07143f;
+
+}
+
+.resume-header p {
+    margin: 0;
+    margin-left: 18vh;
+    color: #555;
+}
+
+.resume-header p.phone,
+.resume-header p.email {
+    font-size: 14px;
+}
+
+/* Section Layouts */
+.resume-section {
+    margin-bottom: 20px;
+    margin-left: 2vh;
+}
+
+.resume-section h3 {
+    margin-bottom: 10px;
+    color: #07143f;
+    /* font-weight: bold; */
+}
+
+.resume-section p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Experience and Education Section Layout */
+.resume-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 2.2vh;
+}
+
+.resume-item:last-child {
+    border-bottom: none;
+}
+
+.resume-item p {
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+/* Skills Section */
+#skills-list p {
+    display: inline-block;
+    background-color: #07143f;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 2vh;
+}
+
+
+[contenteditable="true"]:hover {
+    outline: 1.5px dashed #ccc;
+    cursor: text;
+}
+
+.Link-down {
+    margin-top: 5vh;
+}
+
+.Link-down input {
+    margin-top: 2vh;
+    background-color: #fff;
+}
+
+
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #07143f;
+    color: #fff;
+    padding: 15px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.6vh;
+    font-weight: 200;
+}
+
+
+
+/* Media Queries for Responsive Design */
+
+/* Mobile devices */
+@media (max-width: 430px) and (min-width: 200px) {
+    .container {
+        max-width: 90%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2.5vh;
+    }
+
+    h2 {
+        font-size: 2vh;
+    }
+
+    label {
+        font-size: 2vh;
+    }
+
+    button {
+        font-size: 1.4vh;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .genrate-btn button {
+        margin: 2vh 0;
+        font-size: 1.8vh;
+    }
+
+    #resume-output img {
+        width: 10vh;
+        height: 10vh;
+    }
+
+    .resume-header h5 {
+        font-size: 2.5vh;
+    }
+
+    .resume-header h6 {
+        font-size: 2.3vh;
+    }
+
+    #resume-output p {
+        font-size: 1.5vh;
+    }
+
+    .textAlign {
+        margin-left: 0vh;
+    }
+
+    #resume-output h3 {
+        font-size: 2.5vh;
+    }
+
+    .resume-section p {
+        font-size: 10vh;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 431px) and (max-width: 600px) {
+    .container {
+        max-width: 80%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 3vh;
+    }
+
+    h2 {
+        font-size: 2vh;
+    }
+
+    label {
+        font-size: 2vh;
+    }
+
+    button {
+        font-size: 1.5vh;
+        margin-bottom: 1vh;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .genrate-btn {
+        margin: 2vh 0;
+    }
+
+    #resume-output img {
+        width: 15vh;
+        height: 15vh;
+    }
+
+    .resume-header h5 {
+        font-size: 2.5vh;
+    }
+
+    .resume-header h6 {
+        font-size: 2.3vh;
+    }
+
+    #resume-output p {
+        font-size: 1.5vh;
+    }
+
+    .textAlign {
+        margin-left: 1vh;
+    }
+
+    #resume-output h3 {
+        font-size: 2.5vh;
+    }
+
+    .resume-section p {
+        font-size: 10vh;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/* Tablet devices */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        max-width: 75%;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 3vh;
+    }
+
+    h2 {
+        font-size: 2.3vh;
+    }
+
+    label,
+    button {
+        font-size: 1.6vh;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        width: 85%;
+        padding: 12px;
+    }
+
+    .genrate-btn {
+        margin: 4vh 0;
+    }
+
+    #resume-output img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .resume-header h5 {
+        font-size: 3.5vh;
+    }
+
+    .resume-header h6 {
+        font-size: 3vh;
+    }
+
+    .resume-header p.phone,
+    .resume-header p.email {
+        font-size: 14px;
+    }
+
+    .textAlign {
+        margin-left: 1vh;
+    }
+
+    #resume-output h3 {
+        font-size: 2.5vh;
+    }
+
+    #resume-output p {
+        font-size: 2vh;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/* Desktop devices */
+@media (min-width: 901px) and (max-width: 1000px) {
+    .container {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 3vh;
+    }
+
+    h2 {
+        font-size: 3vh;
+        padding: 0vh;
+        padding-left: 1.5vh;
+    }
+
+    label,
+    button {
+        font-size: 2.2vh;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        width: 85%;
+        margin-right: 2vh;
+        font-size: 1.5vh;
+    }
+
+    .genrate-btn {
+        margin: 5vh 0;
+    }
+
+    #resume-output img {
+        width: 15vh;
+        height: 15vh;
+    }
+
+    .resume-header h5 {
+        font-size: 4vh;
+    }
+
+    .resume-header h6 {
+        font-size: 3vh;
+    }
+
+    .resume-header p.phone,
+    .resume-header p.email {
+        font-size: 16px;
+    }
+
+    .textAlign {
+        margin-left: 1vh;
+    }
+
+    #resume-output h3 {
+        font-size: 2.5vh;
+    }
+
+    #resume-output p {
+        font-size: 2vh;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
