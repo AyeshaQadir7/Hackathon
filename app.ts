@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
     generateResumeButton.addEventListener("click", () => {
         const name = (document.getElementById("name") as HTMLInputElement).value;
         const designation = (document.getElementById("designation") as HTMLInputElement).value;
