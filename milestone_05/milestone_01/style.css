@@ -1,0 +1,470 @@
+/* Google Fonts - Poppins */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: .7px;
+}
+
+body {
+    margin: 20px;
+    background-color: #f7f8f3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bg {
+    background-color: #F5F5F5;
+    top: 15%;
+    height: 55vh;
+    width: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    position: absolute;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 26px;
+    color: #07143f;
+
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #07143f;
+}
+
+.header img.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 4px solid #fab440;
+    cursor: pointer;
+}
+
+.header h1,
+.header h3 {
+    margin: 5px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 2vh;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    color: #07143f;
+}
+
+button i {
+    font-size: 26px;
+    margin-bottom: 1vh;
+    color: #07143f;
+}
+
+button span {
+    font-size: 17px;
+    color: #002c3e;
+}
+
+button:hover span {
+    color: #fab440;
+    transition: .3s ease-in-out;
+}
+
+button:hover i {
+    color: #fab440;
+    transition: .2s ease-in-out;
+}
+
+
+
+.section {
+    display: none;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    list-style-position: inside;
+    list-style-type: disc;
+    background-color: #F5F5F5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    height: auto;
+    width: 85vh;
+    margin-top: 5vh;
+    padding: 20px;
+}
+
+.section h2 {
+    color: #07143f;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.section p,
+.section ul,
+.section h2 {
+    width: 100%;
+}
+
+.section p,
+.section ul,
+.section li {
+    text-align: left;
+    padding-left: 7vh;
+    font-size: 17px;
+}
+
+.section i {
+    font-size: 2.5vh;
+    padding-left: 4vh;
+    padding-top: 1.2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    color: #fab440;
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+    padding-left: 10px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    left: 4vh;
+    top: 50%;
+    transform: translateY(-40%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fab440;
+}
+
+#personal-info {
+    padding-left: 6vh;
+    line-height: 35px;
+}
+
+/* Responsive Styles */
+/* Mobile devices */
+
+@media (min-width: 300px) and (max-width: 600px) {
+    .bg {
+        width: 80%;
+        height: 56%;
+        align-items: center;
+    }
+
+    .header img.profile-pic {
+        width: 16vh;
+        height: 16vh;
+    }
+
+    .header h1 {
+        font-size: 3.1vh;
+    }
+
+    .header h3 {
+        font-size: 2.6vh;
+    }
+
+    .buttons {
+        gap: 1vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    button {
+        padding: 1.5vh;
+        font-size: 10vh;
+    }
+
+    button i {
+        font-size: 3vh;
+    }
+
+    button span {
+        font-size: 1.6vh;
+    }
+
+    .buttons span i {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .buttons #personal-info-btn,
+    #education-btn,
+    #skills-btn,
+    #experience-btn {
+        font-size: 1.6vh;
+    }
+
+    .section {
+        width: 100%;
+        margin: 15% 0 30% 0;
+    }
+
+    .section h2 {
+        font-size: 3vh;
+        margin-bottom: 4vh;
+    }
+
+    .section p,
+    .section ul,
+    .section li {
+        text-align: left;
+        padding-left: 1vh;
+        font-size: 2.5vh;
+        margin-bottom: 3vh;
+    }
+
+    ul li::before {
+        left: -2vh;
+        width: 1.5vh;
+        height: 1.5vh;
+    }
+
+    .section i {
+        display: none;
+    }
+
+    #personal-info {
+        padding-left: 3vh;
+    }
+
+    #personal-info p {
+        font-size: 2.2vh;
+    }
+
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .bg {
+        width: 80%;
+        height: 50%;
+        align-items: center;
+    }
+
+    .header img.profile-pic {
+        width: 16vh;
+        height: 16vh;
+    }
+
+    .header h1 {
+        font-size: 4.5vh;
+    }
+
+    .header h3 {
+        font-size: 3.5vh;
+    }
+
+    .buttons {
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    button {
+        padding: 1.5vh;
+        font-size: 10vh;
+    }
+
+    button i {
+        font-size: 3vh;
+    }
+
+    button span {
+        font-size: 2vh;
+    }
+
+    .buttons #personal-info-btn,
+    #education-btn,
+    #skills-btn,
+    #experience-btn {
+        font-size: 2.3vh;
+    }
+
+    .section {
+        width: 100%;
+        margin: 15% 0 30% 0;
+    }
+
+    .section h2 {
+        /* font-size: 28px; */
+        font-size: 4vh;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+    }
+
+    .section p,
+    .section ul,
+    .section li {
+        text-align: left;
+        padding-left: 1vh;
+        font-size: 2.8vh;
+        margin-bottom: 3vh;
+    }
+
+    ul li::before {
+        left: -2vh;
+        width: 1.5vh;
+        height: 1.5vh;
+    }
+
+    #personal-info p {
+        text-align: left;
+        padding-left: 7vh;
+        font-size: 2.8vh;
+        margin-bottom: 3vh;
+    }
+
+    .section i {
+        font-size: 3vh;
+        padding-top: .4vh;
+        padding-left: 2.6vh;
+    }
+
+    #personal-info {
+        padding-left: 3vh;
+    }
+
+}
+
+
+@media (min-width:901px) and (max-width: 1100px) {
+    .bg {
+        width: 80%;
+        height: 55%;
+        align-items: center;
+    }
+
+    .header img.profile-pic {
+        width: 18vh;
+        height: 18vh;
+    }
+
+    .header h1 {
+        font-size: 4.5vh;
+    }
+
+    .header h3 {
+        font-size: 3.5vh;
+    }
+
+    .buttons {
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    button {
+        padding: 1.8vh;
+        font-size: 15vh;
+    }
+
+    button i {
+        font-size: 4vh;
+    }
+
+    button span {
+        font-size: 2.6vh;
+    }
+
+    .buttons #personal-info-btn,
+    #education-btn,
+    #skills-btn,
+    #experience-btn {
+        font-size: 2.3vh;
+    }
+
+    .section {
+        width: 100%;
+        margin: 10% 0 30% 0;
+    }
+
+    .section h2 {
+        font-size: 4vh;
+        margin-bottom: 4vh;
+        margin-top: 4vh;
+    }
+
+    .section p,
+    .section ul,
+    .section li {
+        text-align: left;
+        padding-left: 1vh;
+        font-size: 2.8vh;
+        margin-bottom: 3vh;
+    }
+
+    ul li::before {
+        left: -2vh;
+        width: 1.5vh;
+        height: 1.5vh;
+    }
+
+    #personal-info p {
+        text-align: left;
+        padding-left: 7vh;
+        font-size: 2.8vh;
+        margin-bottom: 3vh;
+    }
+
+    .section i {
+        font-size: 3vh;
+        padding-top: .4vh;
+        padding-left: 2.6vh;
+    }
+
+    #personal-info {
+        padding-left: 3vh;
+    }
+
+}

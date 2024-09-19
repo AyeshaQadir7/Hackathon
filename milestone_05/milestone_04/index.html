@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downloadable & Shareable Resume - Ayesha Qadir</title>
+    <title>Editable Resume - Ayesha Qadir</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -18,7 +18,7 @@
 
 <body>
     <div class="container">
-        <h1>Resume Builder</h1>
+        <h1>Editable Resume Builder</h1>
         <form id="resume-form">
             <!-- About Section -->
             <div class="section">
@@ -101,26 +101,13 @@
             </div>
         </form>
         <div id="resume-output" class="section"></div>
-
-        <div class="Link-down box">
-            <input type="text" id="username" placeholder="Enter your username">
-            <button onclick="createResume()">Generate Link</button>
-            <p>Your unique URL: <span id="share-link"></span></p>
-            <button onclick="copyToClipboard(document.getElementById('share-link').textContent)">Share Resume
-                Link</button>
-            <button onclick="downloadAsPDF()">Download Resume as PDF</button>
-        </div>
-
     </div>
-
 
     <footer>
         <p>&copy; 2024 Ayesha Qadir. All Rights Reserved.</p>
     </footer>
 
-    <script src="app.js">
-    </script>
-
+    <script src="app.js"></script>
 </body>
 
 </html>

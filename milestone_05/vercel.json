@@ -1,0 +1,46 @@
+{
+  "builds": [
+    {
+      "src": "Hackathon_minus_one/milestone_01/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Hackathon_minus_one/milestone_02/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Hackathon_minus_one/milestone_03/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Hackathon_minus_one/milestone_04/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Hackathon_minus_one/milestone_05/index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/milestone_01/(.*)",
+      "dest": "/Hackathon_minus_one/milestone_01/$1"
+    },
+    {
+      "src": "/milestone_02/(.*)",
+      "dest": "/Hackathon_minus_one/milestone_02/$1"
+    },
+    {
+      "src": "/milestone_03/(.*)",
+      "dest": "/Hackathon_minus_one/milestone_03/$1"
+    },
+    {
+      "src": "/milestone_04/(.*)",
+      "dest": "/Hackathon_minus_one/milestone_04/$1"
+    },
+    {
+      "src": "/milestone_05/(.*)",
+      "dest": "/Hackathon_minus_one/milestone_05/$1"
+    }
+  ]
+}

@@ -171,35 +171,4 @@ document.addEventListener("DOMContentLoaded", () => {
         resumeOutputDiv.style.display = "block";
     });
 
-
 })
-
-// Link Generating and PDF Downolading
-function createResume() {
-    const username = (document.getElementById("username") as HTMLInputElement).value;
-    if (username) {
-        const uniqueUrl = generateUniqueUrl(username);
-        console.log("Resume URL generated: ", uniqueUrl);
-    } else {
-        alert("Please enter your username.");
-    }
-}
-
-function generateUniqueUrl(username: string): string {
-    const baseUrl = "https://yourapp.vercel.app/resume";
-    const uniqueUrl = `${baseUrl}?user=${username}`;
-    document.getElementById("share-link")!.innerHTML = uniqueUrl;
-    return uniqueUrl;
-}
-
-function copyToClipboard(text: string) {
-    navigator.clipboard.writeText(text).then(() => {
-        alert("Link copied to clipboard!");
-    }).catch(err => {
-        console.error("Failed to copy: ", err);
-    });
-}
-
-function downloadAsPDF() {
-    window.print();
-}

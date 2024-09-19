@@ -1,11 +1,11 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", () => {
-    const addExperienceButton = document.getElementById("add-experience") as HTMLButtonElement;
-    const addEducationButton = document.getElementById("add-education") as HTMLButtonElement;
-    const addSkillButton = document.getElementById("add-skill") as HTMLButtonElement;
-    const generateResumeButton = document.getElementById("generate-resume") as HTMLButtonElement;
-
+    const addExperienceButton = document.getElementById("add-experience");
+    const addEducationButton = document.getElementById("add-education");
+    const addSkillButton = document.getElementById("add-skill");
+    const generateResumeButton = document.getElementById("generate-resume");
     addExperienceButton.addEventListener("click", () => {
-        const experienceList = document.getElementById("experience-list") as HTMLDivElement;
+        const experienceList = document.getElementById("experience-list");
         const experienceItem = document.createElement("div");
         experienceItem.className = "experience-item";
         experienceItem.innerHTML = `
@@ -16,9 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         experienceList.appendChild(experienceItem);
         attachRemoveButtonEvent(experienceItem);
     });
-
     addEducationButton.addEventListener("click", () => {
-        const educationList = document.getElementById("education-list") as HTMLDivElement;
+        const educationList = document.getElementById("education-list");
         const educationItem = document.createElement("div");
         educationItem.className = "education-item";
         educationItem.innerHTML = `
@@ -29,9 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         educationList.appendChild(educationItem);
         attachRemoveButtonEvent(educationItem);
     });
-
     addSkillButton.addEventListener("click", () => {
-        const skillsList = document.getElementById("skills-list") as HTMLDivElement;
+        const skillsList = document.getElementById("skills-list");
         const skillItem = document.createElement("div");
         skillItem.className = "skill-item";
         skillItem.innerHTML = `
@@ -41,81 +39,66 @@ document.addEventListener("DOMContentLoaded", () => {
         skillsList.appendChild(skillItem);
         attachRemoveButtonEvent(skillItem);
     });
-
-    function attachRemoveButtonEvent(item: HTMLElement) {
-        const removeButton = item.querySelector(".remove-btn") as HTMLButtonElement;
+    function attachRemoveButtonEvent(item) {
+        const removeButton = item.querySelector(".remove-btn");
         removeButton.addEventListener("click", () => {
             item.remove();
         });
     }
-
     generateResumeButton.addEventListener("click", () => {
-        const name = (document.getElementById("name") as HTMLInputElement).value;
-        const designation = (document.getElementById("designation") as HTMLInputElement).value;
-        const phone = (document.getElementById("phone") as HTMLInputElement).value;
-        const email = (document.getElementById("email") as HTMLInputElement).value;
-        const social = (document.getElementById("social") as HTMLInputElement).value;
-        const profilePic = (document.getElementById("profile-pic") as HTMLInputElement).files?.[0];
-
-
+        const name = document.getElementById("name").value;
+        const designation = document.getElementById("designation").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const social = document.getElementById("social").value;
+        const profilePic = document.getElementById("profile-pic").files?.[0];
         let resumeOutput = `<div class="resume-header">`;
-
         if (profilePic) {
             resumeOutput += `<img src="${URL.createObjectURL(profilePic)}" alt="Profile Picture">`;
         }
         resumeOutput += `<div class="textAlign" ><h5>${name}</h5><h6>${designation}</h6><p class="phone">Phone: ${phone}</p><p class="email">Email: ${email}</p><p>Social: ${social}</p></div></div>`;
-
         // Experience Section
         resumeOutput += `<div class="resume-section"><h3>Experience</h3>`;
         const experienceItems = document.querySelectorAll(".experience-item");
         experienceItems.forEach(item => {
-            const jobTitle = (item.querySelector(".job-title") as HTMLInputElement).value;
-            const companyName = (item.querySelector(".company-name") as HTMLInputElement).value;
+            const jobTitle = item.querySelector(".job-title").value;
+            const companyName = item.querySelector(".company-name").value;
             resumeOutput += `<div class="resume-item"><p>${jobTitle}</p>at<p>${companyName}</p></div>`;
         });
         resumeOutput += `</div>`;
-
         // Education Section
         resumeOutput += `<div class="resume-section"><h3>Education</h3>`;
         const educationItems = document.querySelectorAll(".education-item");
         educationItems.forEach(item => {
-            const schoolName = (item.querySelector(".school-name") as HTMLInputElement).value;
-            const degree = (item.querySelector(".degree") as HTMLInputElement).value;
+            const schoolName = item.querySelector(".school-name").value;
+            const degree = item.querySelector(".degree").value;
             resumeOutput += `<div class="resume-item"><p>${degree}</p>from<p>${schoolName}</p></div>`;
         });
         resumeOutput += `</div>`;
-
         // Skills Section
         resumeOutput += `<div class="resume-section"><h3>Skills</h3><div id="skills-list">`;
         const skillItems = document.querySelectorAll(".skill-item");
         skillItems.forEach(item => {
-            const skill = (item.querySelector(".skill") as HTMLInputElement).value;
+            const skill = item.querySelector(".skill").value;
             resumeOutput += `<p>${skill}</p>`;
         });
         resumeOutput += `</div></div>`;
-
-        const resumeOutputDiv = document.getElementById("resume-output") as HTMLDivElement;
+        const resumeOutputDiv = document.getElementById("resume-output");
         resumeOutputDiv.innerHTML = resumeOutput;
         resumeOutputDiv.style.display = "block";
     });
-
-
-
     generateResumeButton.addEventListener("click", () => {
-        const name = (document.getElementById("name") as HTMLInputElement).value;
-        const designation = (document.getElementById("designation") as HTMLInputElement).value;
-        const phone = (document.getElementById("phone") as HTMLInputElement).value;
-        const email = (document.getElementById("email") as HTMLInputElement).value;
-        const social = (document.getElementById("social") as HTMLInputElement).value;
-        const profilePic = (document.getElementById("profile-pic") as HTMLInputElement).files?.[0];
-
+        const name = document.getElementById("name").value;
+        const designation = document.getElementById("designation").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const social = document.getElementById("social").value;
+        const profilePic = document.getElementById("profile-pic").files?.[0];
         let resumeOutput = `<div class="resume-header">`;
-
         // Profile Picture
         if (profilePic) {
             resumeOutput += `<img src="${URL.createObjectURL(profilePic)}" alt="Profile Picture" contenteditable="false">`;
         }
-
         // Personal Info with contenteditable
         resumeOutput += `
             <div class="textAlign">
@@ -126,13 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p contenteditable="true">Social: ${social}</p>
             </div>
         </div>`;
-
         // Experience Section with contenteditable
         resumeOutput += `<div class="resume-section"><h3>Experience</h3>`;
         const experienceItems = document.querySelectorAll(".experience-item");
         experienceItems.forEach(item => {
-            const jobTitle = (item.querySelector(".job-title") as HTMLInputElement).value;
-            const companyName = (item.querySelector(".company-name") as HTMLInputElement).value;
+            const jobTitle = item.querySelector(".job-title").value;
+            const companyName = item.querySelector(".company-name").value;
             resumeOutput += `
                 <div class="resume-item">
                     <p contenteditable="true">${jobTitle}</p>
@@ -140,13 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`;
         });
         resumeOutput += `</div>`;
-
         // Education Section with contenteditable
         resumeOutput += `<div class="resume-section"><h3>Education</h3>`;
         const educationItems = document.querySelectorAll(".education-item");
         educationItems.forEach(item => {
-            const schoolName = (item.querySelector(".school-name") as HTMLInputElement).value;
-            const degree = (item.querySelector(".degree") as HTMLInputElement).value;
+            const schoolName = item.querySelector(".school-name").value;
+            const degree = item.querySelector(".degree").value;
             resumeOutput += `
                 <div class="resume-item">
                     <p contenteditable="true">${degree}</p>
@@ -154,52 +135,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`;
         });
         resumeOutput += `</div>`;
-
         // Skills Section with contenteditable
         resumeOutput += `<div class="resume-section"><h3>Skills</h3><div id="skills-list">`;
         const skillItems = document.querySelectorAll(".skill-item");
         skillItems.forEach(item => {
-            const skill = (item.querySelector(".skill") as HTMLInputElement).value;
+            const skill = item.querySelector(".skill").value;
             resumeOutput += `<p contenteditable="true">${skill}</p>`;
         });
         resumeOutput += `</div></div>`;
-
-
         // Display the generated resume
-        const resumeOutputDiv = document.getElementById("resume-output") as HTMLDivElement;
+        const resumeOutputDiv = document.getElementById("resume-output");
         resumeOutputDiv.innerHTML = resumeOutput;
         resumeOutputDiv.style.display = "block";
     });
-
-
-})
-
+});
 // Link Generating and PDF Downolading
 function createResume() {
-    const username = (document.getElementById("username") as HTMLInputElement).value;
+    const username = document.getElementById("username").value;
     if (username) {
         const uniqueUrl = generateUniqueUrl(username);
         console.log("Resume URL generated: ", uniqueUrl);
-    } else {
+    }
+    else {
         alert("Please enter your username.");
     }
 }
-
-function generateUniqueUrl(username: string): string {
+function generateUniqueUrl(username) {
     const baseUrl = "https://yourapp.vercel.app/resume";
     const uniqueUrl = `${baseUrl}?user=${username}`;
-    document.getElementById("share-link")!.innerHTML = uniqueUrl;
+    document.getElementById("share-link").innerHTML = uniqueUrl;
     return uniqueUrl;
 }
-
-function copyToClipboard(text: string) {
+function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
         alert("Link copied to clipboard!");
     }).catch(err => {
         console.error("Failed to copy: ", err);
     });
 }
-
 function downloadAsPDF() {
     window.print();
 }

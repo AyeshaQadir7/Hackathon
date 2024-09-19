@@ -33,6 +33,43 @@ document.addEventListener("DOMContentLoaded", function () {
             item.remove();
         });
     }
+    //     generateResumeButton.addEventListener("click", () => {
+    //         const name = (document.getElementById("name") as HTMLInputElement).value;
+    //         const designation = (document.getElementById("designation") as HTMLInputElement).value;
+    //         const phone = (document.getElementById("phone") as HTMLInputElement).value;
+    //         const email = (document.getElementById("email") as HTMLInputElement).value;
+    //         const social = (document.getElementById("social") as HTMLInputElement).value;
+    //         const profilePic = (document.getElementById("profile-pic") as HTMLInputElement).files?.[0];
+    //         let resumeOutput = `<h2>Resume</h2>`;
+    //         if (profilePic) {
+    //             resumeOutput += `<img src="${URL.createObjectURL(profilePic)}" alt="Profile Picture">`;
+    //         }
+    //         resumeOutput += `<h5>${name}</h5><h4>${designation}</h4><p>Phone: ${phone}</p><p>Email: ${email}</p><p>Social: ${social}</p>`;
+    //         const experienceItems = document.querySelectorAll(".experience-item");
+    //         resumeOutput += `<h3>Experience</h3>`;
+    //         experienceItems.forEach(item => {
+    //             const jobTitle = (item.querySelector(".job-title") as HTMLInputElement).value;
+    //             const companyName = (item.querySelector(".company-name") as HTMLInputElement).value;
+    //             resumeOutput += `<p>${jobTitle} at ${companyName}</p>`;
+    //         });
+    //         const educationItems = document.querySelectorAll(".education-item");
+    //         resumeOutput += `<h3>Education</h3>`;
+    //         educationItems.forEach(item => {
+    //             const schoolName = (item.querySelector(".school-name") as HTMLInputElement).value;
+    //             const degree = (item.querySelector(".degree") as HTMLInputElement).value;
+    //             resumeOutput += `<p>${degree} from ${schoolName}</p>`;
+    //         });
+    //         const skillItems = document.querySelectorAll(".skill-item");
+    //         resumeOutput += `<h3>Skills</h3>`;
+    //         skillItems.forEach(item => {
+    //             const skill = (item.querySelector(".skill") as HTMLInputElement).value;
+    //             resumeOutput += `<p>${skill}</p>`;
+    //         });
+    //         const resumeOutputDiv = document.getElementById("resume-output") as HTMLDivElement;
+    //         resumeOutputDiv.innerHTML = resumeOutput;
+    //         resumeOutputDiv.style.display = "block";
+    //     });
+    // });
     generateResumeButton.addEventListener("click", function () {
         var _a;
         var name = document.getElementById("name").value;
@@ -123,30 +160,3 @@ document.addEventListener("DOMContentLoaded", function () {
         resumeOutputDiv.style.display = "block";
     });
 });
-// Link Generating and PDF Downolading
-function createResume() {
-    var username = document.getElementById("username").value;
-    if (username) {
-        var uniqueUrl = generateUniqueUrl(username);
-        console.log("Resume URL generated: ", uniqueUrl);
-    }
-    else {
-        alert("Please enter your username.");
-    }
-}
-function generateUniqueUrl(username) {
-    var baseUrl = "https://yourapp.vercel.app/resume";
-    var uniqueUrl = "".concat(baseUrl, "?user=").concat(username);
-    document.getElementById("share-link").innerHTML = uniqueUrl;
-    return uniqueUrl;
-}
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function () {
-        alert("Link copied to clipboard!");
-    }).catch(function (err) {
-        console.error("Failed to copy: ", err);
-    });
-}
-function downloadAsPDF() {
-    window.print();
-}
