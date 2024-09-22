@@ -26,8 +26,6 @@ After building the static resume, it was time to share it with the world!
 - Published the project on GitHub for version control.
 - Deployed the live project on Vercel, making it accessible online.
 
-I also added some interactivity by enabling the toggling of section visibility using TypeScript.
-
 
 ## 📝 Milestone 3: Dynamic Resume Builder with Form
 
